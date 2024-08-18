@@ -1,18 +1,18 @@
-const express = require('express')
-const app = express()
+const express = require('express');
+const path = require('path');
 
-app.get('/', function (req, res) {
-  res.send('Hello World Min')
-})
-<<<<<<< HEAD
+const app = express();
+const port = 3000;
 
-app.get('/Hello', function (req, res) {
-    res.send('Hello World Khant')
-  })
+// Serve static files (HTML, CSS, JS)
+app.use(express.static(path.join(__dirname, 'public')));
 
-=======
-app.get('/', function (req, res) {
-  res.send('Users')
-})
->>>>>>> 78ddd66 (hj)
-app.listen(3000)
+// Home Route (Serves index.html)
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'index.html'));
+});
+
+// Start the Server
+app.listen(port, () => {
+  console.log(`Server running at http://localhost:${port}/`);
+});

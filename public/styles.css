@@ -1,0 +1,79 @@
+/* styles.css */
+
+/* Set the overall background color of the body */
+body {
+  background-color: white;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden; /* Prevent scroll bars from appearing */
+}
+
+/* Mobile frame styling */
+.mobile-frame {
+  background-color: #5BAAEC; /* App primary color */
+  padding: 30px 20px;
+  border-radius: 40px; /* Rounded corners for iPhone-like look */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  max-width: 380px; /* Adjust width to match iPhone's aspect ratio */
+  max-height: 812px; /* Approximate height for iPhone */
+  height: 90vh; /* Keeps the frame responsive */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  position: relative; /* For adding additional elements like camera notch */
+  top: 70%; /* Move the frame down by 70% */
+  transform: translateY(-70%); /* Adjust positioning to center correctly */
+}
+
+/* Optional: Add a "notch" at the top for an iPhone-like appearance */
+.mobile-frame::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 200px; /* Notch width */
+  height: 30px; /* Notch height */
+  background-color: #5BAAEC;
+  border-radius: 0 0 20px 20px;
+}
+
+/* Headings */
+/* Headings */
+h1 {
+  color: white;
+  margin: 0; /* Remove default margin */
+  padding-top: 80%; /* Move the heading down by 40% of the container height */
+  font-size: 24px;
+  text-align: center;
+}
+
+
+/* Links as buttons */
+a.btn {
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  padding: 12px 0;
+  margin-top: 30px;
+  background-color: white;
+  color: #5BAAEC;
+  border-radius: 12px; /* Rounded buttons */
+  font-size: 18px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+  width: 80%;
+}
+
+a.btn:hover {
+  background-color: #4790cc;
+  color: white;
+}
